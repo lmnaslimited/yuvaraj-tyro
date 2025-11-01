@@ -1,0 +1,23 @@
+{
+    "data": {
+        "name": "Get Issues",
+        "owner": "yuvaraj.shanmugam@lmnas.com",
+        "creation": "2025-11-01 13:35:39.362163",
+        "modified": "2025-11-01 13:35:39.362163",
+        "modified_by": "yuvaraj.shanmugam@lmnas.com",
+        "docstatus": 0,
+        "idx": 0,
+        "script_type": "API",
+        "reference_doctype": "Issue",
+        "event_frequency": "All",
+        "doctype_event": "Before Insert",
+        "api_method": "get_issues",
+        "allow_guest": 1,
+        "disabled": 0,
+        "script": "ld_data=frappe.db.get_all(\"Issues\",\nfields=[\"subject\",\"priority\",\"efforts\",\"description\",\"status\",]\n)\nfrappe.response[\"message\"]={\"issues\":ld_data}",
+        "enable_rate_limit": 0,
+        "rate_limit_count": 5,
+        "rate_limit_seconds": 86400,
+        "doctype": "Server Script"
+    }
+}

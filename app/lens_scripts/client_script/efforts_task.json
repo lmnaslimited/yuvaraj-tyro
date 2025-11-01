@@ -1,0 +1,16 @@
+{
+    "data": {
+        "name": "Auto Efforts Issues",
+        "owner": "yuvaraj.shanmugam@lmnas.com",
+        "creation": "2025-11-01 13:08:13.785767",
+        "modified": "2025-11-01 14:23:55.656524",
+        "modified_by": "yuvaraj.shanmugam@lmnas.com",
+        "docstatus": 0,
+        "idx": 0,
+        "dt": "Issue",
+        "view": "Form",
+        "enabled": 1,
+        "script": "frappe.ui.form.on('Issue', {\n\trefresh(frm) {\n\t\tfrappe.call({\n\t\t    method:\"frappe.client.get_value\",\n\t\t    args:{\n\t\t        doctype:\"Task\",\n\t\t        filters:{\n\t\t            issue:doc.name\n\t\t        },\n\t\t        feildname:\"custom_efforts\",\n\t\t callback:function(idResponse){\n\t\t     if(idResponse)\n\t\t     doc.custom_efforts=idResponse.message.custom_efforts\n\t\t }\n\t\t    }\n\t\t})\n\t}\n})",
+        "doctype": "Client Script"
+    }
+}

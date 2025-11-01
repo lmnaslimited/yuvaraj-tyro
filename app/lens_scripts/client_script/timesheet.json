@@ -1,0 +1,16 @@
+{
+    "data": {
+        "name": "Timesheet Efforts",
+        "owner": "yuvaraj.shanmugam@lmnas.com",
+        "creation": "2025-11-01 13:29:09.905037",
+        "modified": "2025-11-01 14:24:03.744359",
+        "modified_by": "yuvaraj.shanmugam@lmnas.com",
+        "docstatus": 0,
+        "idx": 0,
+        "dt": "Task",
+        "view": "Form",
+        "enabled": 1,
+        "script": "frappe.ui.form.on('Task', {\n\trefresh(frm) {\n\t\tfrappe.call({\n\t\t    method:\"frappe.client.get_value\",\n\t\t    args:{\n\t\t        doctype:\"Timesheet\",\n\t\t        filters:{\n\t\t            Task:doc.name\n\t\t        },\n\t\t        fieldname:\"total_hours\"\n\t\t    },\n\t\t    callback:function(idResponse){\n\t\t        if(idResponse)\n\t\t        doc.efforts=idResponse.message.totalhours\n\t\t    }\n\t\t})\n\t}\n})",
+        "doctype": "Client Script"
+    }
+}

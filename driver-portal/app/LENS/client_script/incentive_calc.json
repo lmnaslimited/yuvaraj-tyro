@@ -1,0 +1,16 @@
+{
+    "data": {
+        "name": "Incentive",
+        "owner": "yuvaraj.shanmugam@lmnas.com",
+        "creation": "2025-12-06 13:46:01.879641",
+        "modified": "2025-12-06 13:48:39.897164",
+        "modified_by": "yuvaraj.shanmugam@lmnas.com",
+        "docstatus": 0,
+        "idx": 0,
+        "dt": "Delivery Agreement",
+        "view": "Form",
+        "enabled": 0,
+        "script": "frappe.ui.form.on('Delivery Agreement', {\n\trefresh(frm) {\n\t\tif(frm.doc.distance<=2 && frm.doc.time_duration<=30){\n\t\t    frm.doc.delivery_points=1\n\t\t    frappe.msg(\"You gain 1 Point as incentive\")\n\t\t}else{\n\t\t   frm.docdelivery_points=0\n\t\t}\n\t}\n})",
+        "doctype": "Client Script"
+    }
+}
